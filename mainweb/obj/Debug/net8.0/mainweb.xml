@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>mainweb</name>
+    </assembly>
+    <members>
+        <member name="T:mainweb.Pages.IndexModel">
+            <summary>
+            The PageModel for the Index page.
+            Handles the logic for the Index Razor page.
+            </summary>
+        </member>
+        <member name="F:mainweb.Pages.IndexModel._logger">
+            <summary>
+            Logger for logging messages.
+            </summary>
+        </member>
+        <member name="M:mainweb.Pages.IndexModel.#ctor(Microsoft.Extensions.Logging.ILogger{mainweb.Pages.IndexModel})">
+            <summary>
+            Constructor for IndexModel.
+            Initializes the logger.
+            </summary>
+            <param name="logger">The logger instance to use for logging messages.</param>
+        </member>
+        <member name="M:mainweb.Pages.IndexModel.OnGet">
+            <summary>
+            Method called on GET requests to the Index page.
+            Used to handle any logic when the page is requested.
+            </summary>
+        </member>
+        <member name="T:Program">
+            <summary>
+            Create and configure the builder for the web application.
+            </summary>
+        </member>
+    </members>
+</doc>

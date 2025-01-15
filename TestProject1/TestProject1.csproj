@@ -1,0 +1,22 @@
+<Project Sdk="MSTest.Sdk/3.6.1">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UseVSTest>true</UseVSTest>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\main\main.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BOOSE">
+      <HintPath>..\..\BOOSE.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

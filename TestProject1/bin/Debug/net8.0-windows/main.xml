@@ -1,0 +1,797 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>main</name>
+    </assembly>
+    <members>
+        <member name="T:main.AppArray">
+            <summary>
+            Represents a custom array implementation that inherits from the BOOSE.Array class.
+            This class can be extended with additional functionality specific to the application.
+            </summary>
+        </member>
+        <member name="M:main.AppArray.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:main.AppArray"/> class.
+            The constructor reduces the restriction counter by calling the base class method.
+            </summary>
+        </member>
+        <member name="T:main.CanvasException">
+            <summary>
+            Custom exception for handling errors specific to the AppCanvas.
+            </summary>
+        </member>
+        <member name="M:main.CanvasException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:main.CanvasException"/> class.
+            </summary>
+        </member>
+        <member name="M:main.CanvasException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:main.CanvasException"/> class with a specified error message.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:main.CanvasException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:main.CanvasException"/> class with a specified error message 
+            and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+            <param name="innerException">The exception that is the cause of the current exception.</param>
+        </member>
+        <member name="T:main.AppCanvas">
+            <summary>
+            Represents a canvas for drawing shapes, lines, and text.
+            </summary>
+        </member>
+        <member name="M:main.AppCanvas.#ctor">
+            <summary>
+            Initializes a new instance of the AppCanvas class with default size.
+            </summary>
+        </member>
+        <member name="P:main.AppCanvas.Xpos">
+            <summary>
+            Gets or sets the X position of the pen.
+            </summary>
+        </member>
+        <member name="P:main.AppCanvas.Ypos">
+            <summary>
+            Gets or sets the Y position of the pen.
+            </summary>
+        </member>
+        <member name="P:main.AppCanvas.PenColour">
+            <summary>
+            Gets or sets the pen color.
+            </summary>
+        </member>
+        <member name="M:main.AppCanvas.Circle(System.Int32,System.Boolean)">
+            <summary>
+            Draws a circle at the current position.
+            </summary>
+            <param name="radius">The radius of the circle.</param>
+            <param name="filled">Indicates whether the circle is filled.</param>
+            <exception cref="T:main.CanvasException">Thrown when the radius is invalid.</exception>
+        </member>
+        <member name="M:main.AppCanvas.Clear">
+            <summary>
+            Clears the canvas to a white background.
+            </summary>
+        </member>
+        <member name="M:main.AppCanvas.DrawTo(System.Int32,System.Int32)">
+            <summary>
+            Draws a line from the current position to the specified position.
+            </summary>
+            <param name="toX">The X coordinate to draw to.</param>
+            <param name="toY">The Y coordinate to draw to.</param>
+            <exception cref="T:main.CanvasException">Thrown when the coordinates are out of bounds.</exception>
+        </member>
+        <member name="M:main.AppCanvas.getBitmap">
+            <summary>
+            Returns the current bitmap of the canvas.
+            </summary>
+            <returns>The bitmap object.</returns>
+        </member>
+        <member name="M:main.AppCanvas.MoveTo(System.Int32,System.Int32)">
+            <summary>
+            Moves the pen to the specified position.
+            </summary>
+            <param name="x">The X coordinate.</param>
+            <param name="y">The Y coordinate.</param>
+            <exception cref="T:main.CanvasException">Thrown when the coordinates are out of bounds.</exception>
+        </member>
+        <member name="M:main.AppCanvas.Rect(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Draws a rectangle at the current position.
+            </summary>
+            <param name="width">The width of the rectangle.</param>
+            <param name="height">The height of the rectangle.</param>
+            <param name="filled">Indicates whether the rectangle is filled.</param>
+            <exception cref="T:main.CanvasException">Thrown when the width or height are invalid.</exception>
+        </member>
+        <member name="M:main.AppCanvas.Reset">
+            <summary>
+            Resets the pen position to the origin.
+            </summary>
+        </member>
+        <member name="M:main.AppCanvas.Set(System.Int32,System.Int32)">
+            <summary>
+            Sets the canvas size and initializes the graphics object.
+            </summary>
+            <param name="xsize">The width of the canvas.</param>
+            <param name="ysize">The height of the canvas.</param>
+        </member>
+        <member name="M:main.AppCanvas.SetColour(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Sets the pen color.
+            </summary>
+            <param name="red">Red component (0-255).</param>
+            <param name="green">Green component (0-255).</param>
+            <param name="blue">Blue component (0-255).</param>
+            <exception cref="T:main.CanvasException">Thrown when the color components are out of range.</exception>
+        </member>
+        <member name="M:main.AppCanvas.Tri(System.Int32,System.Int32)">
+            <summary>
+            Draws a triangle at the current position.
+            </summary>
+            <param name="width">The base width of the triangle.</param>
+            <param name="height">The height of the triangle.</param>
+            <exception cref="T:main.CanvasException">Thrown when the width or height are invalid.</exception>
+        </member>
+        <member name="M:main.AppCanvas.Tri(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Draws a triangle at the current position.
+            </summary>
+            <param name="width">The base width of the triangle.</param>
+            <param name="height">The height of the triangle.</param>
+            <param name="filled">Flag to determine if the triangle should be filled or outlined.</param>
+            <exception cref="T:main.CanvasException">Thrown when the width or height are invalid.</exception>
+        </member>
+        <member name="M:main.AppCanvas.WriteText(System.String)">
+            <summary>
+            Writes text at the current position.
+            </summary>
+            <param name="text">The text to write.</param>
+            <exception cref="T:main.CanvasException">Thrown when the text is null or empty, or if the graphics object is not initialized.</exception>
+        </member>
+        <member name="T:main.AppCircle">
+            <summary>
+            Represents a command to draw a circle on the canvas.
+            Inherits from <see cref="T:BOOSE.CommandTwoParameters"/> to handle a canvas, a radius, and a filled status.
+            </summary>
+        </member>
+        <member name="M:main.AppCircle.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:main.AppCircle"/> class.
+            This default constructor allows the object to be instantiated without parameters.
+            </summary>
+        </member>
+        <member name="M:main.AppCircle.#ctor(BOOSE.Canvas,System.Int32,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:main.AppCircle"/> class with specified parameters.
+            </summary>
+            <param name="canvas">The canvas where the circle will be drawn.</param>
+            <param name="radius">The radius of the circle.</param>
+            <param name="filled">Indicates whether the circle should be filled.</param>
+        </member>
+        <member name="M:main.AppCircle.Execute">
+            <summary>
+            Executes the circle drawing command on the canvas.
+            This method draws a circle with the specified radius and filled status.
+            </summary>
+        </member>
+        <member name="M:main.AppCircle.CheckParameters(System.String[])">
+            <summary>
+            Validates the parameters provided for the circle command.
+            </summary>
+            <param name="parameterList">The list of parameters provided in the command.</param>
+            <exception cref="T:BOOSE.CommandException">Thrown if the filled status is invalid or if the parameters are incorrect.</exception>
+        </member>
+        <member name="T:main.AppClear">
+            <summary>
+            Command to clear the canvas.
+            </summary>
+        </member>
+        <member name="M:main.AppClear.#ctor">
+            <summary>
+            Default constructor for the AppClear command.
+            </summary>
+        </member>
+        <member name="M:main.AppClear.#ctor(BOOSE.Canvas)">
+            <summary>
+            Constructor that accepts a canvas to clear.
+            </summary>
+            <param name="canvas">The canvas that will be cleared.</param>
+        </member>
+        <member name="M:main.AppClear.Execute">
+            <summary>
+            Executes the clear command. It clears the entire canvas.
+            </summary>
+        </member>
+        <member name="T:main.AppCommandFactory">
+            <summary>
+            Factory class for creating command objects based on the provided command type.
+            This class extends <see cref="T:BOOSE.CommandFactory"/> to provide specific implementations for different commands.
+            </summary>
+        </member>
+        <member name="M:main.AppCommandFactory.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:main.AppCommandFactory"/> class.
+            This constructor sets up a dictionary of command types and their associated command creators.
+            </summary>
+        </member>
+        <member name="M:main.AppCommandFactory.MakeCommand(System.String)">
+            <summary>
+            Creates and returns a command object based on the provided command type.
+            </summary>
+            <param name="commandType">The command type as a string (e.g., "tri", "circle").</param>
+            <returns>An <see cref="T:BOOSE.ICommand"/> implementation based on the command type.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when the command type is not recognized.</exception>
+        </member>
+        <member name="T:main.AppElse">
+            <summary>
+            Represents the "else" command in the application, inheriting from <see cref="T:BOOSE.Else"/>.
+            This class is used for defining behavior associated with the "else" command in the context of control flow statements.
+            </summary>
+        </member>
+        <member name="M:main.AppElse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:main.AppElse"/> class.
+            This constructor calls the base class method to reduce restrictions.
+            </summary>
+        </member>
+        <member name="M:main.AppElse.Restrictions">
+            <summary>
+            A placeholder for handling any restrictions associated with the "else" command.
+            This method does not perform any specific action in the <see cref="T:main.AppElse"/> class.
+            </summary>
+        </member>
+        <member name="T:main.AppEnd">
+            <summary>
+            Represents the "end" command in the application, inheriting from <see cref="T:BOOSE.End"/>.
+            This class is used to define the behavior for the "end" command in control flow or program termination logic.
+            </summary>
+        </member>
+        <member name="M:main.AppEnd.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:main.AppEnd"/> class.
+            This constructor calls the base class method to reduce restrictions associated with the command.
+            </summary>
+        </member>
+        <member name="M:main.AppEnd.Restrictions">
+            <summary>
+            A placeholder method for handling restrictions associated with the "end" command.
+            This method does not perform any specific action in the <see cref="T:main.AppEnd"/> class.
+            </summary>
+        </member>
+        <member name="T:main.AppFor">
+            <summary>
+            Represents the "for" command in the application, inheriting from <see cref="T:BOOSE.For"/>.
+            This class defines the behavior for the "for" loop control structure in the application.
+            </summary>
+        </member>
+        <member name="M:main.AppFor.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:main.AppFor"/> class.
+            This constructor calls the <see cref="M:main.AppFor.Restrictions"/> method to enforce any necessary restrictions related to the "for" loop command.
+            </summary>
+        </member>
+        <member name="M:main.AppFor.Restrictions">
+            <summary>
+            A placeholder method for handling restrictions associated with the "for" loop command.
+            This method currently does not perform any specific actions but is part of the command structure.
+            </summary>
+        </member>
+        <member name="T:main.AppIf">
+            <summary>
+            Represents the "if" command in the application, inheriting from <see cref="T:BOOSE.If"/>.
+            This class defines the behavior for the "if" conditional statement in the application.
+            </summary>
+        </member>
+        <member name="M:main.AppIf.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:main.AppIf"/> class.
+            </summary>
+        </member>
+        <member name="M:main.AppIf.Restrictions">
+            <summary>
+            A placeholder method for handling restrictions associated with the "if" command.
+            This method currently does not perform any specific action, but can be extended in the future if needed.
+            </summary>
+        </member>
+        <member name="T:main.AppInt">
+            <summary>
+            Represents an integer variable in the application.
+            This class extends the base <see cref="T:BOOSE.Int"/> class and allows for further customization.
+            </summary>
+        </member>
+        <member name="M:main.AppInt.Restrictions">
+            <summary>
+            Defines restrictions or constraints for the integer variable.
+            This method can be overridden to implement custom validation logic specific to the application.
+            </summary>
+        </member>
+        <member name="T:main.AppParser">
+            <summary>
+            A parser that allows unrestricted parsing of commands and programs.
+            </summary>
+        </member>
+        <member name="M:main.AppParser.#ctor(BOOSE.CommandFactory,BOOSE.StoredProgram)">
+            <summary>
+            Initialises a new instance of the <see cref="T:main.AppParser"/> class.
+            </summary>
+            <param name="factory">The command factory used to create commands.</param>
+            <param name="program">The stored program to parse and manage commands.</param>
+        </member>
+        <member name="M:main.AppParser.ParseProgram(System.String)">
+            <summary>
+            Parses a program represented as a string of commands.
+            </summary>
+            <param name="program">The program string to parse.</param>
+            <exception cref="T:System.ArgumentException">Thrown when the program string is null or empty.</exception>
+        </member>
+        <member name="T:main.AppReal">
+            <summary>
+            Represents the "real" command in the application, inheriting from <see cref="T:BOOSE.Real"/>.
+            This class defines the behavior for the "real" data type command, specifically handling restriction logic.
+            </summary>
+        </member>
+        <member name="F:main.AppReal.restrictionLimit">
+            <summary>
+            A static counter used to track the number of times the restrictions have been applied.
+            This is used to limit the number of times the "real" command can be invoked.
+            </summary>
+        </member>
+        <member name="M:main.AppReal.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:main.AppReal"/> class.
+            This constructor calls the <see cref="M:main.AppReal.Restrictions"/> method to check and enforce the restrictions for the "real" command.
+            </summary>
+        </member>
+        <member name="M:main.AppReal.Restrictions">
+            <summary>
+            A method that enforces restrictions on the "real" command.
+            This method increases the restriction counter each time it is called and throws an exception if the limit is exceeded.
+            </summary>
+        </member>
+        <member name="T:main.AppRectangle">
+            <summary>
+            Command to draw a rectangle on the canvas with optional filled status.
+            </summary>
+        </member>
+        <member name="M:main.AppRectangle.#ctor">
+            <summary>
+            Default constructor for the AppRectangle command.
+            </summary>
+        </member>
+        <member name="M:main.AppRectangle.#ctor(BOOSE.Canvas,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Initializes a new instance of the AppRectangle command with the specified canvas, width, height, and filled status.
+            </summary>
+            <param name="canvas">The canvas on which the rectangle will be drawn.</param>
+            <param name="width">The width of the rectangle.</param>
+            <param name="height">The height of the rectangle.</param>
+            <param name="filled">Specifies whether the rectangle should be filled.</param>
+        </member>
+        <member name="M:main.AppRectangle.Execute">
+            <summary>
+            Executes the rectangle drawing command on the canvas.
+            It checks if the dimensions of the rectangle are valid (greater than zero) and then draws the rectangle.
+            </summary>
+        </member>
+        <member name="M:main.AppRectangle.CheckParameters(System.String[])">
+            <summary>
+            Validates the parameters provided for the rectangle command.
+            It checks if the parameters are correctly provided and validates the filled status if provided.
+            </summary>
+            <param name="parameterList">The list of parameters provided in the command. The first two are the width and height, and the third one is an optional filled status.</param>
+            <exception cref="T:BOOSE.CommandException">Thrown when the filled status is invalid or the wrong number of parameters is provided.</exception>
+        </member>
+        <member name="T:main.AppReset">
+            <summary>
+            Command to reset the pen position to the origin on the canvas.
+            </summary>
+        </member>
+        <member name="M:main.AppReset.#ctor">
+            <summary>
+            Default constructor for the AppReset command.
+            </summary>
+        </member>
+        <member name="M:main.AppReset.#ctor(BOOSE.Canvas)">
+            <summary>
+            Constructor that accepts a canvas to reset the pen on.
+            </summary>
+            <param name="canvas">The canvas where the pen will be reset.</param>
+        </member>
+        <member name="M:main.AppReset.Execute">
+            <summary>
+            Executes the reset command. It resets the pen position to the origin (0, 0).
+            </summary>
+        </member>
+        <member name="T:main.AppStoredProgram">
+            <summary>
+            Represents a stored program with custom logic for handling command execution, including a stack for conditional commands.
+            Inherits from <see cref="T:BOOSE.StoredProgram"/> and overrides relevant methods for program control.
+            </summary>
+        </member>
+        <member name="F:main.AppStoredProgram.commandStack">
+            <summary>
+            A stack that holds conditional commands, allowing the program to manage and execute commands in a specific order.
+            </summary>
+        </member>
+        <member name="M:main.AppStoredProgram.#ctor(BOOSE.ICanvas)">
+            <summary>
+            Initializes a new instance of the <see cref="T:main.AppStoredProgram"/> class.
+            This constructor passes the canvas to the base class and sets up the program for execution.
+            </summary>
+            <param name="canvas">The canvas where drawing and other operations will take place.</param>
+        </member>
+        <member name="M:main.AppStoredProgram.Push(BOOSE.ConditionalCommand)">
+            <summary>
+            Pushes a conditional command onto the command stack.
+            This allows for tracking and execution of commands in a specific sequence.
+            </summary>
+            <param name="command">The conditional command to push onto the stack.</param>
+        </member>
+        <member name="M:main.AppStoredProgram.Pop">
+            <summary>
+            Pops a conditional command from the command stack.
+            If the stack is empty, an exception is thrown.
+            </summary>
+            <returns>The conditional command popped from the stack.</returns>
+            <exception cref="T:BOOSE.StoredProgramException">Thrown when the stack is empty.</exception>
+        </member>
+        <member name="M:main.AppStoredProgram.ResetProgram">
+            <summary>
+            Resets the program, clearing the command stack and resetting the program's state.
+            </summary>
+        </member>
+        <member name="M:main.AppStoredProgram.Run">
+            <summary>
+            Runs the stored program by iterating through commands and executing them.
+            It includes logic for error handling and preventing infinite loops.
+            </summary>
+        </member>
+        <member name="T:main.AppTriangle">
+            <summary>
+            Represents the triangle drawing command for the canvas, inheriting from <see cref="T:BOOSE.CommandTwoParameters"/>.
+            This command draws a triangle based on the provided base width and height, and optionally whether it should be filled.
+            </summary>
+        </member>
+        <member name="F:main.AppTriangle.baseWidth">
+            <summary>
+            The base width of the triangle.
+            </summary>
+        </member>
+        <member name="F:main.AppTriangle.height">
+            <summary>
+            The height of the triangle.
+            </summary>
+        </member>
+        <member name="F:main.AppTriangle.filled">
+            <summary>
+            Indicates whether the triangle should be filled or not.
+            </summary>
+        </member>
+        <member name="M:main.AppTriangle.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:main.AppTriangle"/> class.
+            This constructor is used when no parameters are provided for the triangle command.
+            </summary>
+        </member>
+        <member name="M:main.AppTriangle.#ctor(BOOSE.Canvas,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:main.AppTriangle"/> class with a specified base width and height.
+            This constructor sets the triangle to be filled by default.
+            </summary>
+            <param name="canvas">The canvas where the triangle will be drawn.</param>
+            <param name="baseWidth">The base width of the triangle.</param>
+            <param name="height">The height of the triangle.</param>
+        </member>
+        <member name="M:main.AppTriangle.Execute">
+            <summary>
+            Executes the triangle drawing command on the canvas.
+            This method retrieves the base width and height from the parameters and draws the triangle.
+            </summary>
+        </member>
+        <member name="M:main.AppTriangle.CheckParameters(System.String[])">
+            <summary>
+            Validates the parameters provided for the triangle command.
+            It checks that the filled status is a valid boolean value.
+            </summary>
+            <param name="parameterList">The list of parameters provided in the command.</param>
+        </member>
+        <member name="T:main.AppWhile">
+            <summary>
+            Represents the "while" loop command in the application. Inherits from <see cref="T:BOOSE.While"/>.
+            This command is used to execute a set of actions as long as a certain condition holds true.
+            </summary>
+        </member>
+        <member name="M:main.AppWhile.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:main.AppWhile"/> class.
+            This constructor sets the restrictions for the while loop command.
+            </summary>
+        </member>
+        <member name="M:main.AppWhile.Restrictions">
+            <summary>
+            Defines the restrictions that apply to the while loop command.
+            This method can be customized to define specific restrictions, but in this case, it is empty.
+            </summary>
+        </member>
+        <member name="T:main.AppWrite">
+            <summary>
+            Command to write evaluated expressions on the canvas.
+            This command evaluates a string expression and writes the result on the canvas.
+            </summary>
+        </member>
+        <member name="M:main.AppWrite.#ctor">
+            <summary>
+            Default constructor for the AppWrite command.
+            Initializes a new instance of the <see cref="T:main.AppWrite"/> class.
+            </summary>
+        </member>
+        <member name="M:main.AppWrite.Execute">
+            <summary>
+            Executes the AppWrite command.
+            This method evaluates the expression provided as a parameter and writes the result to the canvas.
+            </summary>
+        </member>
+        <member name="M:main.AppWrite.CheckParameters(System.String[])">
+            <summary>
+            Checks the validity of the parameters passed to the AppWrite command.
+            This method ensures that the command receives at least one parameter.
+            </summary>
+            <param name="parameter">The list of parameters passed to the command.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:main.CanvasSaver.#ctor" -->
+        <!-- Badly formed XML comment ignored for member "M:main.CanvasSaver.SaveCanvas(System.Drawing.Bitmap)" -->
+        <member name="T:main.Form1">
+            <summary>
+            Main form of the application that interacts with the canvas and handles user input.
+            </summary>
+        </member>
+        <member name="M:main.Form1.#ctor">
+            <summary>
+            Initializes the form and sets up the canvas and related components.
+            The sound will play if isSoundPlaying is true.
+            </summary>
+        </member>
+        <member name="M:main.Form1.Form1_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Handles the Enter key press to trigger program run.
+            </summary>
+        </member>
+        <member name="M:main.Form1.OutputWindow_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Handles the MouseDown event to start drawing or to start a circle or eraser.
+            </summary>
+        </member>
+        <member name="M:main.Form1.OutputWindow_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            Handles the MouseUp event to stop drawing, finalize the circle, or stop erasing.
+            </summary>
+        </member>
+        <member name="M:main.Form1.ToggleDrawingMode(System.String)">
+            <summary>
+            Switches between drawing modes (pen, circle, or eraser).
+            </summary>
+        </member>
+        <member name="M:main.Form1.SoundBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            Plays or stops the background music based on the current state.
+            Changes the button image between sound and no sound.
+            </summary>
+        </member>
+        <member name="M:main.Form1.StopSound">
+            <summary>
+            Stops the background sound.
+            </summary>
+        </member>
+        <member name="M:main.Form1.StartSound">
+            <summary>
+            Starts playing the background sound.
+            </summary>
+        </member>
+        <member name="M:main.Form1.UpdateSoundButtonImage(System.String)">
+            <summary>
+            Updates the background image of the Sound button.
+            </summary>
+            <param name="imageName">The name of the image to set (e.g., "mute.png" or "sound.png").</param>
+        </member>
+        <member name="M:main.Form1.GetEmbeddedResourceStream(System.String)">
+            <summary>
+            Retrieves an embedded resource stream.
+            </summary>
+            <param name="resourceName">The full resource path (e.g., "main.Resources.bgmusic1.wav").</param>
+            <returns>The resource stream.</returns>
+        </member>
+        <member name="M:main.Form1.ResetBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            Clears the canvas, resets positions, and refreshes the form.
+            </summary>
+        </member>
+        <member name="M:main.Form1.OutputWindow_Paint(System.Object,System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Paints the canvas onto the form's output window.
+            </summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">The paint event arguments.</param>
+        </member>
+        <member name="M:main.Form1.PlayBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            Executes the program when the panel is clicked, similar to the button click functionality.
+            </summary>
+            <param name="sender">The sender object.</param>
+            <param name="e">The event arguments.</param>
+        </member>
+        <member name="M:main.Form1.saveImageToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Saves the current canvas as an image.
+            </summary>
+        </member>
+        <member name="M:main.Form1.loadImageToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Loads an image onto the canvas.
+            </summary>
+        </member>
+        <member name="M:main.Form1.penToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Switches to the pen mode when the "Pen" menu item is clicked.
+            </summary>
+        </member>
+        <member name="M:main.Form1.circleToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Switches to the circle mode when the "Circle" menu item is clicked.
+            </summary>
+        </member>
+        <member name="M:main.Form1.eraserToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Switches to the eraser mode when the "Eraser" menu item is clicked.
+            </summary>
+        </member>
+        <member name="F:main.Form1.components">
+            <summary>
+             Required designer variable.
+            </summary>
+        </member>
+        <member name="M:main.Form1.Dispose(System.Boolean)">
+            <summary>
+             Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:main.Form1.InitializeComponent">
+            <summary>
+             Required method for Designer support - do not modify
+             the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:main.Program.Main">
+            <summary>
+             The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:main.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:main.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:main.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:main.Properties.Resources._12_23_2024">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:main.Properties.Resources.back">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:main.Properties.Resources.back1">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:main.Properties.Resources.back500">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:main.Properties.Resources.Drawer_Pro_12_23_2024">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:main.Properties.Resources.err1">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:main.Properties.Resources.images">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:main.Properties.Resources.Input_Window_12_23_2024">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:main.Properties.Resources.input20050">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:main.Properties.Resources.input200501">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:main.Properties.Resources.input270">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:main.Properties.Resources.mute">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:main.Properties.Resources.out1">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:main.Properties.Resources.pixelcut_export__1_">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:main.Properties.Resources.reset">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:main.Properties.Resources.sound">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:main.Properties.Resources.village_1">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:main.Properties.Resources.village_11">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="T:main.ApplicationConfiguration">
+            <summary>
+             Bootstrap the application configuration.
+            </summary>
+        </member>
+        <member name="M:main.ApplicationConfiguration.Initialize">
+            <summary>
+             Bootstrap the application as follows:
+             <code>
+             global::System.Windows.Forms.Application.EnableVisualStyles();
+             global::System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
+             global::System.Windows.Forms.Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            </code>
+            </summary>
+        </member>
+    </members>
+</doc>

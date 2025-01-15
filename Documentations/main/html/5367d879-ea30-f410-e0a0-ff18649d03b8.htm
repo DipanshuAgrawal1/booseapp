@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html ><html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" href="../css/bulma.css" /><link rel="stylesheet" href="../css/font-awesome.min.css" /><link rel="stylesheet" href="../css/presentationStyle.css" /><link rel="stylesheet" href="../css/vs.min.css" /><script src="../scripts/jquery-3.5.1.min.js"></script><script src="../scripts/clipboard.min.js"></script><script src="../scripts/highlight.min.js"></script><script src="../scripts/presentationStyle.js"></script><title>main Namespace</title><meta name="Title" content="main" /><meta name="Help.Id" content="N:main" /><meta name="Help.ContentType" content="Reference" /><meta name="container" content="main" /><meta name="guid" content="5367d879-ea30-f410-e0a0-ff18649d03b8" /><meta name="tocFile" content="../toc/Root.xml" /></head><body><div class="fixedLayout"><div id="Header" class="fixedHeader"><div class="pageHeader level mb-0 py-2 px-4"><div id="TitleContainer" class="level-left"><div id="DocumentationTitle" class="level-item">Drawer Pro</div></div><div id="LangFilterSearchContainer" class="level-right"><div class="level-item"><div class="dropdown is-hoverable"><div class="dropdown-trigger"><button class="button" aria-haspopup="true" aria-controls="dropdown-menu"><span id="CurrentLanguage"></span><span class="icon is-small"><i class="fa fa-angle-down" aria-hidden="true"></i></span></button></div><div class="dropdown-menu" role="menu"><div id="LanguageSelections" class="dropdown-content"><a class="dropdown-item languageFilterItem" data-languageId="cs">C#</a></div></div></div></div><div class="level-item"><form id="SearchForm" action="#" onsubmit="TransferToSearchPage(); return false;"><div class="field"><div class="control has-icons-left"><input id="SearchTerms" class="input" type="text" maxlength="200" placeholder="Search" /><span class="icon is-small is-left"><i class="fa fa-search"></i></span><button id="SearchButton" type="submit" class="is-hidden"></button></div></div></form></div></div></div></div><div class="fixedContent"><nav class="breadcrumb my-1 px-2 border-bottom" role="navigation"><ul id="TopicBreadcrumbs" /></nav><div id="ContentContainer" class="columns pl-5 pr-5 fixedContent"><div id="ShowHideTOCColumn" class="column is-hidden-tablet"><a id="ShowHideTOC">Show/Hide TOC</a></div><div id="TOCColumn" class="column is-hidden-mobile"><nav class="toc"><ul id="TableOfContents" class="toc-menu" /></nav></div><div id="Resizer" class="is-hidden"></div><div id="TopicContent" class="column content is-7"><h1>main Namespace</h1><div class="summary"> </div><h2 class="quickLinkHeader"><span class="icon toggleSection" tabindex="0"><i class="fa fa-angle-down"></i></span>Classes</h2><div id="IDACASection"><table id="classList" class="table is-hoverable"><tr><td><a href="4d07da20-4c86-c3d3-2c46-8b0cefed13bb.htm">AppArray</a></td><td>
+            Represents a custom array implementation that inherits from the BOOSE.Array class.
+            This class can be extended with additional functionality specific to the application.
+            </td></tr><tr><td><a href="d21e5518-b756-c271-b27b-8ce442965db2.htm">AppCanvas</a></td><td>
+            Represents a canvas for drawing shapes, lines, and text.
+            </td></tr><tr><td><a href="fb910b54-7ca5-daae-ebf9-e1273cb825ad.htm">AppCircle</a></td><td>
+            Represents a command to draw a circle on the canvas.
+            Inherits from <span class="noLink">CommandTwoParameters</span> to handle a canvas, a radius, and a filled status.
+            </td></tr><tr><td><a href="94bf7b85-fc1b-2a2d-4938-726b04db222a.htm">AppClear</a></td><td>
+            Command to clear the canvas.
+            </td></tr><tr><td><a href="80a54cbd-e057-5e2d-0d6c-9ecef9a2c05e.htm">AppCommandFactory</a></td><td>
+            Factory class for creating command objects based on the provided command type.
+            This class extends <span class="noLink">CommandFactory</span> to provide specific implementations for different commands.
+            </td></tr><tr><td><a href="b74af150-8b13-0236-0f93-a458a211070f.htm">AppElse</a></td><td>
+            Represents the "else" command in the application, inheriting from <span class="noLink">Else</span>.
+            This class is used for defining behavior associated with the "else" command in the context of control flow statements.
+            </td></tr><tr><td><a href="4f192883-ccdf-43dd-8cdc-b77e1fe68a06.htm">AppEnd</a></td><td>
+            Represents the "end" command in the application, inheriting from <span class="noLink">End</span>.
+            This class is used to define the behavior for the "end" command in control flow or program termination logic.
+            </td></tr><tr><td><a href="e8aa4080-467b-9b47-c449-8f3cd3b61504.htm">AppFor</a></td><td>
+            Represents the "for" command in the application, inheriting from <span class="noLink">For</span>.
+            This class defines the behavior for the "for" loop control structure in the application.
+            </td></tr><tr><td><a href="5a2da896-0eb8-de74-f589-e511a92ad4a9.htm">AppIf</a></td><td>
+            Represents the "if" command in the application, inheriting from <span class="noLink">If</span>.
+            This class defines the behavior for the "if" conditional statement in the application.
+            </td></tr><tr><td><a href="22985f93-b6ad-48b0-fe45-d022317da72b.htm">AppInt</a></td><td>
+            Represents an integer variable in the application.
+            This class extends the base <span class="noLink">Int</span> class and allows for further customization.
+            </td></tr><tr><td><a href="3804f3bd-bcc0-8746-4ae0-8a47011763bc.htm">AppMethod</a></td><td> </td></tr><tr><td><a href="b2a777aa-0087-c19e-2e3d-442dc4ef83e9.htm">AppParser</a></td><td>
+            A parser that allows unrestricted parsing of commands and programs.
+            </td></tr><tr><td><a href="1f1c359f-7878-3db9-9ed8-0b33914bfef7.htm">AppReal</a></td><td>
+            Represents the "real" command in the application, inheriting from <span class="noLink">Real</span>.
+            This class defines the behavior for the "real" data type command, specifically handling restriction logic.
+            </td></tr><tr><td><a href="9a088d79-0922-5f1a-233e-71b78ea74c85.htm">AppRectangle</a></td><td>
+            Command to draw a rectangle on the canvas with optional filled status.
+            </td></tr><tr><td><a href="91c939e4-e688-3ced-8acd-77500264023f.htm">AppReset</a></td><td>
+            Command to reset the pen position to the origin on the canvas.
+            </td></tr><tr><td><a href="4f0bc96f-c8ec-3105-575f-061097e907a2.htm">AppStoredProgram</a></td><td>
+            Represents a stored program with custom logic for handling command execution, including a stack for conditional commands.
+            Inherits from <span class="noLink">StoredProgram</span> and overrides relevant methods for program control.
+            </td></tr><tr><td><a href="c2a0193e-0462-1fae-d36b-675f9b7ede8c.htm">AppTriangle</a></td><td>
+            Represents the triangle drawing command for the canvas, inheriting from <span class="noLink">CommandTwoParameters</span>.
+            This command draws a triangle based on the provided base width and height, and optionally whether it should be filled.
+            </td></tr><tr><td><a href="3238e709-6de6-37bd-0bc6-82037bf594d0.htm">AppWhile</a></td><td>
+            Represents the "while" loop command in the application. Inherits from <span class="noLink">While</span>.
+            This command is used to execute a set of actions as long as a certain condition holds true.
+            </td></tr><tr><td><a href="e03cf90f-0e88-78c4-9660-1fb3ccd28a86.htm">AppWrite</a></td><td>
+            Command to write evaluated expressions on the canvas.
+            This command evaluates a string expression and writes the result on the canvas.
+            </td></tr><tr><td><a href="91bccc88-b0e5-f093-6935-a42ce137ad19.htm">CanvasException</a></td><td>
+            Custom exception for handling errors specific to the AppCanvas.
+            </td></tr><tr><td><a href="c3f30e9b-3c5b-4739-098d-0b229c473102.htm">CanvasLoader</a></td><td>
+            Provides functionality to load an image (canvas) from the file system.
+            </td></tr><tr><td><a href="eb3bfff9-e8db-006f-d6c9-2363ad112f25.htm">CanvasSaver</a></td><td>
+            Provides functionality to save the canvas (bitmap) to a file.
+            </td></tr><tr><td><a href="ee1bd61a-d76e-3ab6-4d5d-22b75487a331.htm">ConsoleInputHandler</a></td><td>
+            Handles console input on a separate thread, passing commands to a parser for execution.
+            </td></tr><tr><td><a href="2a72dc4f-c846-090f-2430-7d21dace618f.htm">Form1</a></td><td>
+            Main form of the application that interacts with the canvas and handles user input.
+            </td></tr></table></div></div><div id="InThisArticleColumn" class="column is-hidden-mobile"><nav class="menu sticky is-hidden"><p class="menu-label"><strong>In This Article</strong></p><ul id="InThisArticleMenu" class="menu-list"><li><a class="quickLink">Classes</a></li></ul></nav></div></div></div></div><script>$(function(){
+SetDefaultLanguage("cs");
+LoadTocFile(null, null);
+InitializeQuickLinks();
+
+$(".toggleSection" ).click(function () {
+    SectionExpandCollapse(this);
+});
+
+$(".toggleSection").keypress(function () {
+    SectionExpandCollapseCheckKey(this, event)
+});
+});</script></body></html>
